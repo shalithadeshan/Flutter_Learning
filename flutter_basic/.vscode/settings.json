@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "afterDelay",
+    "dart.debugSdkLibraries": true,
+    "dart.debugExternalLibraries": true,
+    "dart.devToolsBrowser": "default"
+}
