@@ -6,7 +6,24 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  var questionIndex = 0;
+
+  void answerQuestion() {
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
+
+    print(questionIndex);
+  }
+
   Widget build(BuildContext context) {
     var questions = [
       'What\'s your favorite color?',
@@ -19,18 +36,23 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text('The question!'),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: null,
+            Text(
+              questions[questionIndex],
             ),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
             RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: null,
+              child: Text('Answer 2'),
+              onPressed: () => print('Answer 2 Chosen'),
+            ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: () {
+                // ...
+                print('Answer 2 chosen');
+              },
             ),
           ],
         ), // <why we use 'Widget' array holds list of widgets here>
