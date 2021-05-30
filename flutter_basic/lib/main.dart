@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'question.dart';
+
 // void main() {
 //   runApp(MyApp());
 // }
@@ -13,7 +15,7 @@ class MyApp extends StatefulWidget {
   }
 }
 
-class MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {// _ use to turn public to private
   var questionIndex = 0;
 
   void answerQuestion() {
@@ -36,7 +38,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(
+            Question(
               questions[questionIndex],
             ),
             RaisedButton(
